@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import 'menu/total_time_page.dart';
+import 'menu/total_time/total_time_page.dart';
 import 'menu/your_time_page.dart';
 
 void main() => runApp(const MyApp());
@@ -48,7 +48,7 @@ class MyHomePage extends StatelessWidget {
           body: TabBarView(
             children: [
               YourTimeDart(),
-              TotalTimeDart(),
+              TotalTimePage(),
             ],
           ),
         ),
