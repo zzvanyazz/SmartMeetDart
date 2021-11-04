@@ -20,20 +20,22 @@ class DayNumberWidget extends StatelessWidget {
 
     return Container(
       alignment: Alignment.topLeft,
-      width: txtSize.width,
-      height: txtSize.height,
-      margin: EdgeInsets.all(1),
-      padding: EdgeInsets.all(2),
-      decoration: BoxDecoration(
-          color: Colors.red,
-          borderRadius: BorderRadius.all(Radius.circular(8))),
-      child: AspectRatio(
-        aspectRatio: 1,
-        child: Center(
-          child: Text(
-            day.day.toString(),
-            maxLines: 1,
-            textAlign: TextAlign.center,
+      child: Container(
+        width: txtSize.width,
+        height: txtSize.height,
+        margin: EdgeInsets.all(1),
+        padding: EdgeInsets.all(2),
+        decoration: BoxDecoration(
+            color: Colors.red,
+            borderRadius: BorderRadius.all(Radius.circular(8))),
+        child: AspectRatio(
+          aspectRatio: 1,
+          child: Center(
+            child: Text(
+              day.day.toString(),
+              maxLines: 1,
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),

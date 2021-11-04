@@ -4,10 +4,10 @@ import 'package:smart_meet_dart/menu/total_time/day_calendar_widget.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class TotalTimePage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return TableCalendar(
+      shouldFillViewport: true,
       firstDay: getDateWithOffset(offsetMount: -1),
       lastDay: getDateWithOffset(offsetYear: 1),
       focusedDay: DateTime.now(),

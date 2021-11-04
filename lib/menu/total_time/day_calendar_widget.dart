@@ -36,7 +36,8 @@ class _DayCalendarWidgetState extends State<DayCalendarWidget> {
         color: Theme.of(context).primaryColor,
         padding: EdgeInsets.zero,
         onPressed: () {},
-        child: Stack(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             DayNumberWidget(context, day, focusedDay),
             PresentUsersWidget(context, day, focusedDay)
@@ -45,8 +46,6 @@ class _DayCalendarWidgetState extends State<DayCalendarWidget> {
       ),
     );
   }
-
-
 }
 
 extension DateOnlyCompare on DateTime {
