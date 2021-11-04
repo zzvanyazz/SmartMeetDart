@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -27,22 +28,25 @@ class _DayCalendarWidgetState extends State<DayCalendarWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(2),
-      decoration: BoxDecoration(
-          color: Colors.black12,
-          borderRadius: BorderRadius.circular(12),
-          border: DateTime.now().isSameDate(day)
-              ? Border.all(color: Color.fromARGB(180, 120, 70, 170), width: 2)
-              : null),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          DayNumberWidget(context, day, focusedDay),
-          PresentUsersWidget(context, day, focusedDay)
-        ],
+      margin: EdgeInsets.all(1),
+      child: MaterialButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        color: Theme.of(context).primaryColor,
+        padding: EdgeInsets.zero,
+        onPressed: () {},
+        child: Stack(
+          children: [
+            DayNumberWidget(context, day, focusedDay),
+            PresentUsersWidget(context, day, focusedDay)
+          ],
+        ),
       ),
     );
   }
+
+
 }
 
 extension DateOnlyCompare on DateTime {
