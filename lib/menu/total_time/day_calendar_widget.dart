@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:smart_meet_dart/menu/day_dialog.dart';
 import 'package:smart_meet_dart/menu/total_time/day_number_widget.dart';
 import 'package:smart_meet_dart/menu/total_time/present_user_widget.dart';
 
@@ -35,7 +36,9 @@ class _DayCalendarWidgetState extends State<DayCalendarWidget> {
         ),
         color: Theme.of(context).primaryColor,
         padding: EdgeInsets.zero,
-        onPressed: () {},
+        onPressed: () {
+          showDialog(context: context, builder: (context) => DayDialog());
+        },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
