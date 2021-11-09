@@ -3,29 +3,27 @@ import 'package:flutter/material.dart';
 class DayDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Dialog(
-          child: Column(
+    return Dialog(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(9)),
+          side: BorderSide(color: Colors.white)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Wrap(
             children: [
-              Column(),
-              Wrap(
-                children: [
-                  UserElement(),
-                  UserElement(),
-                  UserElement(),
-                  UserElement(),
-                  UserElement(),
-                  UserElement(),
-                  UserElement(),
-                  UserElement(),
-                ],
-              )
+              UserElement(),
+              UserElement(),
+              UserElement(),
+              UserElement(),
+              UserElement(),
+              UserElement(),
+              UserElement(),
+              UserElement(),
             ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -33,23 +31,40 @@ class DayDialog extends StatelessWidget {
 class UserElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      RawMaterialButton(
-        onPressed: () {},
-        elevation: 2.0,
-        fillColor: Colors.white,
-        child: Icon(
-          Icons.pause,
-          size: 35.0,
+    return Container(
+      margin: EdgeInsets.all(4),
+      child: MaterialButton(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(9)),
+            side: BorderSide(color: Colors.black54)),
+        padding: EdgeInsets.all(0),
+        onPressed: () => {},
+        child: Wrap(
+          direction: Axis.vertical,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 2),
+                  child: Material(
+                    color: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(7)),
+                        side: BorderSide(color: Colors.black54)),
+                    child: Icon(
+                      Icons.check,
+                      color: Colors.black54,
+                    ),
+                  ),
+                ),
+                Container(
+                    margin: EdgeInsets.symmetric(horizontal: 4),
+                    child: Text("Name SecondName"))
+              ],
+            )
+          ],
         ),
-        padding: EdgeInsets.all(15.0),
-        shape: CircleBorder(),
       ),
-      Text("Name SecondName")
-
-    ]
-    ,
     );
   }
-
 }
